@@ -1,0 +1,35 @@
+# 빌드 디렉토리 제외
+build/
+out/
+
+# 자동 생성된 .cpp 파일 제외 (예: auto_generated_로 시작하는 .cpp 파일)
+auto_generated_*.cpp
+
+# 특정 툴에서 생성하는 임시 파일 제외
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+# Visual Studio 관련 불필요한 파일 제외
+.vscode/
+*.vcxproj*
+*.sln
+
+# CMake 빌드 관련 파일 제외
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# CLion 관련 파일 제외
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# .cpp로 끝나지 않는 C++ 파일 제외 (예: 자동 생성된 .h, .hpp 등)
+!*.cpp
