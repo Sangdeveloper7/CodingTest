@@ -1,13 +1,10 @@
-import org.w3c.dom.Node;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class 백준_연구소 {
+public class 백준_연구소_BFS {
     private static int[][] map;
     private static int N, M;
     private static ArrayDeque<Node> virus = new ArrayDeque<>(); // 바이러스가 있는 칸
