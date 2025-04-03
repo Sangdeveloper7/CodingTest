@@ -1,3 +1,5 @@
+package 취업준비;
+
 public class Race {
     static int sharedData = 0; // 공유 데이터
 
