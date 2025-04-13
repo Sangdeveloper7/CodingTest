@@ -13,7 +13,6 @@ public class PR_징검다리건너기_Queue {
         this.value = value;
         this.index = index;
     }
-
     }
 
     public static int solution(int[] stones, int k) {
@@ -36,8 +35,8 @@ public class PR_징검다리건너기_Queue {
     }
 
     public static void main(String[] args) {
-        int[] stone = {2, 4, 5, 3, 2, 1, 4, 2, 5, 1};
-        int k = 3;
+        int[] stone = {2, 7, -5, -4, 10, -5, -5, -5, 30, -10};
+        int k = 2;
         System.out.println(solution(stone, k));
     }
 }
