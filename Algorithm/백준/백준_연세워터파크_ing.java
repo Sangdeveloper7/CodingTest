@@ -1,9 +1,8 @@
 import java.io.*;
-import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-public class 백준_연세워터파크 {
+public class 백준_연세워터파크_ing {
 
         private static class Stone{
             int index;
