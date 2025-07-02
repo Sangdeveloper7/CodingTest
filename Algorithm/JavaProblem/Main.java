@@ -9,14 +9,14 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        D10();
+        B09();
     }
 
     static void A01() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter a birth year > ");
         int birth_year = Integer.parseInt(br.readLine());
-        int age = 2024 - birth_year + 1;
+        int age = 2025 - birth_year;
         System.out.println("You are " + age + " year's old.");
     }
 
@@ -93,7 +93,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter a birth year > ");
         int birth_year = Integer.parseInt(br.readLine());
-        int age = 2024 - birth_year + 1;
+        int age = 2025 - birth_year;
         System.out.println(age >= 20 ? "You are adult" : "You are not adult");
     }
 
@@ -103,7 +103,7 @@ public class Main {
         double input_degree = Double.parseDouble(br.readLine());
         System.out.print("Enter type of temperature('C' for Celsius, 'F' for Fahrenheit) ");
         String kind = br.readLine();
-        System.out.println("Fahrenheit temperature is " + (kind.equals('C') ? (input_degree - 32) * 1.8 : input_degree * 1.8 + 32));
+        System.out.println(kind.equals("C") ? "Fahrenheit temperature is " + (input_degree * 1.8 + 32) : "Celsius temperature is " + ((input_degree - 32) / 1.8));
     }
 
     static void B03() throws IOException {
@@ -212,19 +212,22 @@ public class Main {
 
     static void B09() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         System.out.print("Enter height(cm) ");
         int height = Integer.parseInt(br.readLine());
-        System.out.print("Enter weight(cm) ");
+        System.out.print("Enter weight(kg) ");
         int weight = Integer.parseInt(br.readLine());
+        double heightMeter = height / 100.0;
+        double bmi = weight / (heightMeter * heightMeter);
 
-        System.out.println(height / (weight * weight) >= 25 ? "You are obesity " : "You are not obesity\n");
+        System.out.println(bmi >= 25 ? "You are obesity" : "You are not obesity");
     }
 
     static void C01() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter a birth year > ");
         int birth_year = Integer.parseInt(br.readLine());
-        int age = 2024 - birth_year + 1;
+        int age = 2025 - birth_year;
 
         String category = age >= 0 && age < 7 ? "You are baby" : age < 13 ? "You are child" : age < 20 ? "You are teenage" : age < 30 ? "You are youth" : age < 60 ? "You are middle-age" : "You are elderly";
         System.out.println(category + "\n");
@@ -587,10 +590,12 @@ public class Main {
         int num2 = Integer.parseInt(st.nextToken());
 
         for(int i = 1; i <= 100; i++){
-            if(i % num1 == 0 && i % num2 == 0){
-                continue;
-            }else if(i % num1 == 0 || i % num2 == 0)
-                System.out.print(i + " ");
+            if(i % num1 == 0 || i % num2 == 0){
+                if(i % num1 == 0 && i % num2 == 0)
+                    continue;
+                else
+                    System.out.print(i + " ");
+            }
         }
     }
 
