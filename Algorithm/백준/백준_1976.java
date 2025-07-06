@@ -55,8 +55,8 @@ public class 백준_1976 {
                 parents[x];
     }
 
-    static void union(int x, int y){ㅇ
-        int rootX = find(x);
+    static void union(int x, int y){
+        int rootX = find(x); // rootX = arr[x]
         int rootY = find(y);
 
         if(rootX != rootY)
