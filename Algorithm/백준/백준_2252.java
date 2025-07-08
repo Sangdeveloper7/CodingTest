@@ -3,6 +3,7 @@ package 백준;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Array;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
@@ -37,6 +38,25 @@ public class 백준_2252 {
             arr[end]++;
         }
 
-        ArrayDeque<>
+
+        StringBuilder sb = new StringBuilder();
+
+        for(int i = 1; i < N+1; i++){
+            if(arr[i] == 0)
+                queue.add(i);
+        }
+
+        while(!queue.isEmpty()){
+            int now = queue.poll();
+            sb.append(now).append(" ");
+
+            for(int next : adjList[now]){
+                arr[next]--;
+                if(arr[next] == 0)
+                    queue.add(next);
+            }
+        }
+
+        System.out.println(sb);
     }
 }
