@@ -24,12 +24,13 @@ public class 백준_1516 {
         indegree = new int[N+1];
         adjList = new ArrayDeque[N+1];
         answer = new int[N+1];
+        queue = new ArrayDeque<>();
 
         for(int i = 0; i < N+1; i++)
             adjList[i] = new ArrayDeque<>();
 
 
-        for(int i = 0; i < N; i++){// 입력 값 정리
+        for(int i = 1; i <= N; i++){// 입력 값 정리
             StringTokenizer st = new StringTokenizer(br.readLine());
             buildTime[i] = Integer.parseInt(st.nextToken());
 
@@ -44,6 +45,44 @@ public class 백준_1516 {
             }
         }
 
+        for(int i = 1; i <N+1; i++){
+            if(indegree[i] == 0) {
+                queue.add(i);
+                answer[i] = buildTime[i];
+            }
+        }
+
+        while(!queue.isEmpty()){
+            int current = queue.poll();
+
+            for(int next : adjList[current]){
+                answer[next] = Math.max(answer[next], answer[current] + buildTime[next]);
+                indegree[next]--;
+
+                if(indegree[next] == 0)
+                    queue.add(next);
+            }
+        }
+
+//        for(int i = 0; i < N; i++){
+//            if(adjList[i].isEmpty())
+//                queue.add(buildTime[i]);
+//            else{
+//                int pretime = 0;
+//                while(!queue.isEmpty()){
+//                    for(int before : adjList[i]){
+//                        pretime = Math.max(pretime, buildTime[before]);
+//                    }
+//                }
+//                queue.add(pretime + buildTime[i]);
+//            }
+//        }
+
+
+        for(int i = 1; i < answer.length; i++){
+            int time = answer[i];
+            System.out.println(time);
+        }
 
     }
 }

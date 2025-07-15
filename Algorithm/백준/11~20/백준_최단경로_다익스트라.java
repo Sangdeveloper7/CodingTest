@@ -38,7 +38,6 @@ public class 백준_최단경로_다익스트라 {
 
         for(int i = 0; i<=V; i++) {
             adjList[i] = new ArrayList<>();
-
         }
 
         for(int i = 0; i<E; i++) {

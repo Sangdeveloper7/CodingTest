@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 import java.util.function.IntFunction;
 
 
-public class PR_저자_다익스트라_알고리즘 {
+public class                                                                                                   PR_저자_다익스트라_알고리즘 {
     static final int INF = Integer.MAX_VALUE;
 
     /*
